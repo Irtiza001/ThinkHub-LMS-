@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Detail</title>
+  <link rel="stylesheet" href="course-detail.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar (same as course.html) -->
+    <aside class="sidebar">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <p class="portal-title">ThinkHub Academic Portal</p>
+        <nav>
+          <ul> 
+            <li>
+              <img src="assets/home.png" alt="Home" />
+              <a href="profile.html">Dashboard</a>
+            </li>
+            <li>
+              <img src="assets/meeting.png" alt="Courses" />
+              <a href="course.html">Courses</a>
+            </li>
+            <li>
+              <img src="assets/mark.png" alt="Attendance" />
+              <a href="Sattendance.html">Attendance</a>
+            </li>
+            <li>
+              <img src="assets/test.png" alt="Results" />
+              <a href="grade.html">Results</a>
+            </li>
+            <li>
+              <img src="assets/setting.png" alt="Settings" />
+              <a href="setting.html">Settings</a>
+            </li>
+            <li>
+              <img src="assets/progress.png" alt="Progress" />
+              <a href="progress.html">Progress</a>
+            </li>
+            <li>
+              <img src="assets/register.png" alt="Register" />
+              <a href="register.html">Register</a>
+            </li>
+            <li>
+              <img src="assets/logout.png" alt="Sign Out" />
+              <a href="logout.html">Sign Out</a>
+            </li>
+            
+          </ul>
+        </nav>
+      </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="top-bar">
+        <button onclick="goBack()" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Courses</button>
+        <div class="search-container">
+          <input type="text" placeholder="Search...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      
+      <section class="course-detail" id="course-detail">
+        <!-- Content will be loaded here by JavaScript -->
+        <div class="loader">Loading course details...</div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const courseData = {
+      1: {
+        name: "Introduction to Programming",
+        description: "Learn the basics of programming using Python and logic building.",
+        creditHours: 3,
+        status: "Ongoing",
+        modules: [
+          "📘 Basics of Programming",
+          "🧮 Variables & Data Types",
+          "🔁 Control Structures",
+          "📦 Functions & Modules"
+        ],
+        instructor: "Dr. Ali Khan",
+        email: "ali.khan@example.com",
+        officeHours: "Mon to Thu, 9 AM - 11 AM"
+      },
+      2: {
+        name: "Data Structures",
+        description: "Understand core data structures like arrays, linked lists, and trees.",
+        creditHours: 4,
+        status: "Ongoing",
+        modules: [
+          "📗 Arrays & Linked Lists",
+          "🌲 Trees & Graphs",
+          "🧮 Stacks & Queues",
+          "🔄 Searching & Sorting"
+        ],
+        instructor: "Miss Sarah Rauf",
+        email: "sarah.rauf@example.com",
+        officeHours: "Tue to Fri, 10 AM - 12 PM"
+      },
+      3: {
+        name: "Database Systems",
+        description: "Learn relational databases, SQL, and database design principles.",
+        creditHours: 3,
+        status: "Ongoing",
+        modules: [
+          "🗃️ Database Design",
+          "💾 SQL Basics",
+          "🔄 Normalization",
+          "📊 ER Diagrams"
+        ],
+        instructor: "Sir Zain Abbas",
+        email: "zain.abbas@example.com",
+        officeHours: "Wed to Fri, 1 PM - 3 PM"
+      },
+      4: {
+        name: "Operating Systems",
+        description: "Explore processes, memory management, file systems, and more.",
+        creditHours: 3,
+        status: "Ongoing",
+        modules: [
+          "🔧 Process Management",
+          "💾 Memory Management",
+          "📁 File Systems",
+          "🛠️ Scheduling Algorithms"
+        ],
+        instructor: "Dr. Naveed Ahmed",
+        email: "naveed.ahmed@example.com",
+        officeHours: "Mon to Wed, 2 PM - 4 PM"
+      }
+    };
+
+    function goBack() {
+      window.location.href = "course.html";
+    }
+
+    function enrollCourse() {
+      const status = document.getElementById('enrollment-status');
+      status.innerHTML = `
+        <div class="enrollment-success">
+          <i class="fas fa-check-circle"></i>
+          <span>You have been enrolled successfully!</span>
+        </div>
+      `;
+      
+      // Disable the enroll button after successful enrollment
+      const enrollBtn = document.querySelector('.enroll-btn');
+      enrollBtn.disabled = true;
+      enrollBtn.textContent = 'Enrolled';
+      enrollBtn.classList.add('enrolled');
+    }
+
+    // Load course data when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      const courseId = params.get("id");
+      const course = courseData[courseId];
+      const container = document.getElementById("course-detail");
+
+      if (course) {
+        container.innerHTML = `
+          <div class="course-header">
+            <h1>${course.name}</h1>
+            <div class="course-meta">
+              <span class="credit-hours">${course.creditHours} Credit Hours</span>
+              <span class="status">${course.status}</span>
+            </div>
+          </div>
+          
+          <div class="course-description">
+            <p>${course.description}</p>
+          </div>
+          
+          <div class="course-sections">
+            <div class="modules-section">
+              <h2><i class="fas fa-book-open"></i> Modules & Resources</h2>
+              <ul class="modules-list">
+                ${course.modules.map(mod => `<li>${mod}</li>`).join('')}
+              </ul>
+            </div>
+            
+            <div class="instructor-section">
+              <h2><i class="fas fa-chalkboard-teacher"></i> Instructor Information</h2>
+              <div class="instructor-info">
+                <p><strong>Instructor:</strong> ${course.instructor}</p>
+                <p><strong>Email:</strong> <a href="mailto:${course.email}">${course.email}</a></p>
+                <p><strong>Office Hours:</strong> ${course.officeHours}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="course-actions">
+            <button class="enroll-btn" onclick="enrollCourse()">
+              <i class="fas fa-user-plus"></i> Enroll Now
+            </button>
+            <div id="enrollment-status"></div>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2>Course Not Found</h2>
+            <p>The requested course could not be found. Please return to the courses list and try again.</p>
+            <button onclick="goBack()">Return to Courses</button>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

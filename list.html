@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse Courses</title>
+  <link rel="stylesheet" href="list.css" />
+</head>
+<body>
+    <header>
+      <h1>📚 Explore Our Courses</h1>
+      <input type="text" id="search" placeholder="🔍 Search for a course..." onkeyup="searchCourses()" />
+      <div class="nav-buttons">
+        <a href="home.html" class="back-home-btn"> Back to Home</a>
+      </div>      
+    </header>
+    
+  
+
+  <main id="course-list">
+    <article class="course" data-course="Web Development">
+      <h3>Web Development</h3>
+      <p>Learn to build dynamic websites using HTML, CSS, and JavaScript.</p>
+      <a href="course-detail.html?course=Web%20Development">View Details</a>
+    </article>
+    <article class="course" data-course="Mobile App Development">
+      <h3>Mobile App Development</h3>
+      <p>Create Android and iOS apps using both native and hybrid tools.</p>
+      <a href="course-detail.html?course=Mobile%20App%20Development">View Details</a>
+    </article>
+    <article class="course" data-course="Python Programming">
+      <h3>Python Programming</h3>
+      <p>Master Python from basics to advanced concepts with real-world projects.</p>
+      <a href="course-detail.html?course=Python%20Programming">View Details</a>
+    </article>
+    <article class="course" data-course="Data Science">
+      <h3>Data Science</h3>
+      <p>Analyze data using Python, Pandas, NumPy, and visualization tools.</p>
+      <a href="course-detail.html?course=Data%20Science">View Details</a>
+    </article>
+    <article class="course" data-course="Machine Learning">
+      <h3>Machine Learning</h3>
+      <p>Learn supervised and unsupervised learning with hands-on exercises.</p>
+      <a href="course-detail.html?course=Machine%20Learning">View Details</a>
+    </article>
+    <article class="course" data-course="UI/UX Design">
+      <h3>UI/UX Design</h3>
+      <p>Design user-friendly and aesthetic interfaces using Figma and Adobe XD.</p>
+      <a href="course-detail.html?course=UI%2FUX%20Design">View Details</a>
+    </article>
+    <article class="course" data-course="Cybersecurity Basics">
+      <h3>Cybersecurity Basics</h3>
+      <p>Understand online threats, ethical hacking, and how to secure systems.</p>
+      <a href="course-detail.html?course=Cybersecurity%20Basics">View Details</a>
+    </article>
+    <article class="course" data-course="Cloud Computing">
+      <h3>Cloud Computing</h3>
+      <p>Explore AWS, Azure, and Google Cloud fundamentals and services.</p>
+      <a href="course-detail.html?course=Cloud%20Computing">View Details</a>
+    </article>
+    <article class="course" data-course="Artificial Intelligence">
+      <h3>Artificial Intelligence</h3>
+      <p>Dive into intelligent systems, neural networks, and real-world AI use cases.</p>
+      <a href="course-detail.html?course=Artificial%20Intelligence">View Details</a>
+    </article>
+    <article class="course" data-course="Database Management">
+      <h3>Database Management</h3>
+      <p>Learn SQL, relational models, normalization, and database design.</p>
+      <a href="course-detail.html?course=Database%20Management">View Details</a>
+    </article>
+    <article class="course" data-course="DevOps Engineering">
+      <h3>DevOps Engineering</h3>
+      <p>Learn CI/CD, Jenkins, Docker, and Kubernetes to streamline software delivery.</p>
+      <a href="course-detail.html?course=DevOps%20Engineering">View Details</a>
+    </article>
+    <article class="course" data-course="Game Development">
+      <h3>Game Development</h3>
+      <p>Build 2D and 3D games using Unity, Unreal Engine, and C# scripting.</p>
+      <a href="course-detail.html?course=Game%20Development">View Details</a>
+    </article>
+  </main>
+
+  <script>
+    function searchCourses() {
+      const query = document.getElementById("search").value.toLowerCase();
+      const courses = document.querySelectorAll(".course");
+      courses.forEach(course => {
+        const title = course.dataset.course.toLowerCase();
+        course.style.display = title.includes(query) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Grades & Feedback</title>
+  <link rel="stylesheet" href="grade.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+        <ul> 
+          <li>
+            <img src="assets/home.png" alt="Home" />
+            <a href="profile.html">Dashboard</a>
+          </li>
+          <li>
+            <img src="assets/meeting.png" alt="Courses" />
+            <a href="course.html">Courses</a>
+          </li>
+          <li>
+            <img src="assets/mark.png" alt="Attendance" />
+            <a href="Sattendance.html">Attendance</a>
+          </li>
+          <li>
+            <img src="assets/test.png" alt="Results" />
+            <a href="grade.html">Results</a>
+          </li>
+          <li>
+            <img src="assets/setting.png" alt="Settings" />
+            <a href="setting.html">Settings</a>
+          </li>
+          <li>
+            <img src="assets/progress.png" alt="Progress" />
+            <a href="progress.html">Progress</a>
+          </li>
+          <li>
+            <img src="assets/register.png" alt="Register" />
+            <a href="register.html">Register</a>
+          </li>
+          <li>
+            <img src="assets/logout.png" alt="Sign Out" />
+            <a href="logout.html">Sign Out</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <input type="text" placeholder="Search...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+
+      <!-- Page Heading -->
+      <h1>Your Grades & Feedback</h1>
+
+      <!-- Cards Section -->
+      <div class="cards">
+        <div class="card">
+          <h2>Web Development</h2>
+          <p><strong>Final Grade:</strong> 89%</p>
+          <p><strong>GPA:</strong> 3.7</p>
+          <p><strong>Attendance:</strong> 95%</p>
+        </div>
+        <div class="card">
+          <h2>Database Systems</h2>
+          <p><strong>Final Grade:</strong> 83%</p>
+          <p><strong>GPA:</strong> 3.3</p>
+          <p><strong>Attendance:</strong> 90%</p>
+        </div>
+        <div class="card">
+          <h2>Operating Systems</h2>
+          <p><strong>Final Grade:</strong> 80%</p>
+          <p><strong>GPA:</strong> 3.0</p>
+          <p><strong>Attendance:</strong> 93%</p>
+        </div>
+      </div>
+
+      <!-- Grade Breakdown Table -->
+      <div class="card">
+        <h2>Detailed Grade Breakdown</h2>
+        <table class="grades-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+          <thead>
+            <tr style="background-color: #eceff4;">
+              <th>Course</th>
+              <th>Assignments</th>
+              <th>Quizzes</th>
+              <th>Midterm</th>
+              <th>Final</th>
+              <th>Attendance</th>
+              <th>Grade</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Web Development</td>
+              <td>90%</td>
+              <td>85%</td>
+              <td>88%</td>
+              <td>92%</td>
+              <td>95%</td>
+              <td>A- (89%)</td>
+              <td>Great job! Improve CSS styling.</td>
+            </tr>
+            <tr>
+              <td>Database Systems</td>
+              <td>85%</td>
+              <td>80%</td>
+              <td>75%</td>
+              <td>88%</td>
+              <td>90%</td>
+              <td>B+ (83%)</td>
+              <td>Good! Focus more on SQL optimization.</td>
+            </tr>
+            <tr>
+              <td>Operating Systems</td>
+              <td>80%</td>
+              <td>78%</td>
+              <td>70%</td>
+              <td>85%</td>
+              <td>93%</td>
+              <td>B (80%)</td>
+              <td>Need to improve process management.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

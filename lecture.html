@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Lectures</title>
+    <link rel="stylesheet" href="lectures.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-book-open"></i> Web Development Lectures</h1>
+        <button class="back-btn" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Back to Course
+        </button>
+    </header>
+
+    <main class="lectures-container">
+        <section class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 1</span>
+                <h2>HTML Basics</h2>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="lecture-content">
+                <p class="description">Introduction to HTML structure, elements, tags, and basic document layout. Learn how to create your first web page with proper semantic markup.</p>
+                <div class="lecture-meta">
+                    <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                    <span class="date"><i class="far fa-calendar-alt"></i> Oct 15, 2023</span>
+                </div>
+                <a href="assets/html_slides.pdf" target="_blank" class="slides-link">
+                    <i class="fas fa-file-pdf"></i> Download Slides
+                </a>
+            </div>
+        </section>
+
+        <section class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 2</span>
+                <h2>CSS Styling</h2>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="lecture-content">
+                <p class="description">Learn about CSS syntax, selectors, colors, fonts, and styling layout. Master the box model and responsive design principles.</p>
+                <div class="lecture-meta">
+                    <span class="duration"><i class="far fa-clock"></i> 52 min</span>
+                    <span class="date"><i class="far fa-calendar-alt"></i> Oct 22, 2023</span>
+                </div>
+                <a href="assets/css_slides.pdf" target="_blank" class="slides-link">
+                    <i class="fas fa-file-pdf"></i> Download Slides
+                </a>
+            </div>
+        </section>
+
+        <section class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 3</span>
+                <h2>JavaScript Introduction</h2>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="lecture-content">
+                <p class="description">Covers variables, functions, events, and basic scripting logic in JavaScript. Learn how to make your web pages interactive.</p>
+                <div class="lecture-meta">
+                    <span class="duration"><i class="far fa-clock"></i> 1 hr 8 min</span>
+                    <span class="date"><i class="far fa-calendar-alt"></i> Oct 29, 2023</span>
+                </div>
+                <a href="assets/js_slides.pdf" target="_blank" class="slides-link">
+                    <i class="fas fa-file-pdf"></i> Download Slides
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

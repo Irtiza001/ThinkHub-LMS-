@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+        <ul> 
+          <li>
+            <img src="assets/home.png" alt="Home" />
+            <a href="profile.html">Dashboard</a>
+          </li>
+          <li>
+            <img src="assets/meeting.png" alt="Courses" />
+            <a href="course.html">Courses</a>
+          </li>
+          <li>
+            <img src="assets/mark.png" alt="Attendance" />
+            <a href="Sattendance.html">Attendance</a>
+          </li>
+          <li>
+            <img src="assets/test.png" alt="Results" />
+            <a href="grade.html">Results</a>
+          </li>
+          <li>
+            <img src="assets/setting.png" alt="Settings" />
+            <a href="setting.html">Settings</a>
+          </li>
+          <li>
+            <img src="assets/progress.png" alt="Progress" />
+            <a href="progress.html">Progress</a>
+          </li>
+          <li>
+            <img src="assets/register.png" alt="Register" />
+            <a href="register.html">Register</a>
+          </li>
+          <li>
+            <img src="assets/logout.png" alt="Sign Out" />
+            <a href="logout.html">Sign Out</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1>Edit Profile</h1>
+      </header>
+
+      <form class="profile-form" onsubmit="updateProfile(event)">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" value="John Doe" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" value="john@example.com" required />
+
+        <label for="password">Change Password:</label>
+        <input type="password" id="password" placeholder="New Password" />
+
+        <div class="form-buttons">
+          <button type="submit" class="update-btn">Update</button>
+          <a href="profile.html" class="back-btn">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function updateProfile(e) {
+      e.preventDefault();
+      alert("Profile updated successfully!");
+    }
+  </script>
+</body>
+</html>

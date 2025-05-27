@@ -1,1 +1,1 @@
-# ThinkHub-LMS-
+# Learning-Managment-System

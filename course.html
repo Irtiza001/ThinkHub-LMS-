@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Enrolled Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="course.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+        <ul> 
+          <li><img src="assets/home.png" alt="Home" /><a href="profile.html">Dashboard</a></li>
+          <li><img src="assets/meeting.png" alt="Courses" /><a href="course.html">Courses</a></li>
+          <li><img src="assets/mark.png" alt="Attendance" /><a href="Sattendance.html">Attendance</a></li>
+          <li><img src="assets/test.png" alt="Results" /><a href="grade.html">Results</a></li>
+          <li><img src="assets/setting.png" alt="Settings" /><a href="setting.html">Settings</a></li>
+          <li><img src="assets/progress.png" alt="Progress" /><a href="progress.html">Progress</a></li>
+          <li><img src="assets/register.png" alt="Register" /><a href="register.html">Register</a></li>
+          <li><img src="assets/logout.png" alt="Sign Out" /><a href="logout.html">Sign Out</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="top-bar">
+        <input type="text" placeholder="Search...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <h1 class="page-title">Enrolled Courses</h1>
+      <div class="course-list">
+        <a href="course-detail.html?id=1" class="course-card">
+          <h3>Introduction to Programming</h3>
+          <p><strong>Instructor:</strong> Dr. Ali Khan</p>
+          <p><strong>Credit Hours:</strong> 3</p>
+          <p><strong>Status:</strong> Ongoing</p>
+        </a>
+
+        <a href="course-detail.html?id=2" class="course-card">
+          <h3>Data Structures</h3>
+          <p><strong>Instructor:</strong> Miss Sarah Rauf</p>
+          <p><strong>Credit Hours:</strong> 4</p>
+          <p><strong>Status:</strong> Ongoing</p>
+        </a>
+
+        <a href="course-detail.html?id=3" class="course-card">
+          <h3>Database Systems</h3>
+          <p><strong>Instructor:</strong> Sir Zain Abbas</p>
+          <p><strong>Credit Hours:</strong> 3</p>
+          <p><strong>Status:</strong> Ongoing</p>
+        </a>
+
+        <a href="course-detail.html?id=4" class="course-card">
+          <h3>Operating Systems</h3>
+          <p><strong>Instructor:</strong> Dr. Naveed Ahmed</p>
+          <p><strong>Credit Hours:</strong> 3</p>
+          <p><strong>Status:</strong> Ongoing</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

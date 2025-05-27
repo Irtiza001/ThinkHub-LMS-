@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    
+       
+</head>
+<body> 
+    <header>
+        <h1>Web Development Quiz</h1>
+        <p id="timer"><i class="fas fa-clock"></i> Time Left: <span id="time">300</span>s</p>
+    </header>
+
+    <div class="quiz-container">
+        <form id="quizForm" class="quiz-form">
+            <div class="question">
+                <p><strong>1. What does HTML stand for?</strong></p>
+                <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+                <label><input type="radio" name="q1" value="b"> High Text Machine Language</label>
+            </div>
+
+            <div class="question">
+                <p><strong>2. Define CSS in 1-2 lines:</strong></p>
+                <textarea name="q2" rows="3" required placeholder="Enter your answer here..."></textarea>
+            </div>
+
+            <div class="question">
+                <p><strong>3. Which HTML tag is used to link a CSS file?</strong></p>
+                <label><input type="radio" name="q3" value="a"> &lt;script&gt;</label>
+                <label><input type="radio" name="q3" value="b"> &lt;link&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>4. What does JavaScript primarily do on a webpage?</strong></p>
+                <label><input type="radio" name="q4" value="a"> Styling</label>
+                <label><input type="radio" name="q4" value="b"> Adds interactivity</label>
+            </div>
+
+            <div class="question">
+                <p><strong>5. What is the use of <code>document.querySelector()</code> in JavaScript?</strong></p>
+                <textarea name="q5" rows="3" required placeholder="Enter your answer here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Submit Quiz
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Timer functionality
+        let timeLeft = 300;
+        const timerElement = document.getElementById('time');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            
+            if (timeLeft <= 30) {
+                timerElement.style.color = '#ff6b6b';
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                document.getElementById('quizForm').submit();
+            }
+        }, 1000);
+        
+        // Form submission
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Quiz submitted successfully!');
+            // Add your form submission logic here
+        });
+    </script>
+</body>
+</html>

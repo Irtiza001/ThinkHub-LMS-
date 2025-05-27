@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments Portal</title>
+    <link rel="stylesheet" href="assignments.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-open"></i> Assignments Portal</h1>
+            <button onclick="goBack()" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+        </header>
+
+        <section class="assignments-list">
+            <article class="assignment-card">
+                <h2><i class="fas fa-file-code"></i> Assignment 1: HTML Layout</h2>
+                <p class="due-date"><i class="far fa-calendar-alt"></i> Due Date: <strong>May 10, 2025</strong></p>
+                <a href="assets/assignment1.pdf" download class="download-link">
+                    <i class="fas fa-file-pdf"></i> Download Assignment PDF
+                </a>
+
+                <form class="submit-form" onsubmit="submitAssignment(event, 'Assignment 1')">
+                    <label><i class="fas fa-cloud-upload-alt"></i> Submit Your Work:</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Assignment
+                    </button>
+                </form>
+                <p class="submission-status" id="status-1"></p>
+            </article>
+
+            <article class="assignment-card">
+                <h2><i class="fas fa-paint-brush"></i> Assignment 2: CSS Styling</h2>
+                <p class="due-date"><i class="far fa-calendar-alt"></i> Due Date: <strong>May 15, 2025</strong></p>
+                <a href="assets/assignment2.pdf" download class="download-link">
+                    <i class="fas fa-file-pdf"></i> Download Assignment PDF
+                </a>
+
+                <form class="submit-form" onsubmit="submitAssignment(event, 'Assignment 2')">
+                    <label><i class="fas fa-cloud-upload-alt"></i> Submit Your Work:</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Assignment
+                    </button>
+                </form>
+                <p class="submission-status" id="status-2"></p>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function submitAssignment(event, assignmentName) {
+            event.preventDefault();
+            
+            // Get the form element
+            const form = event.target;
+            
+            // Get the status element
+            const statusId = `status-${assignmentName.split(' ')[1]}`;
+            const statusElement = document.getElementById(statusId);
+            
+            // Simulate submission (in a real app, you would use AJAX/Fetch)
+            setTimeout(() => {
+                statusElement.innerHTML = `<i class="fas fa-check-circle"></i> ${assignmentName} submitted successfully!`;
+                statusElement.className = "submission-status success";
+                
+                // Reset form
+                form.reset();
+                
+                // Hide status after 5 seconds
+                setTimeout(() => {
+                    statusElement.style.display = 'none';
+                }, 5000);
+            }, 1000);
+            
+            return false;
+        }
+    </script>
+</body>
+</html>

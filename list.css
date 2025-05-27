@@ -1,0 +1,119 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5; /* Light grayish blue */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header (Top Navigation) */
+header {
+  background-color: #2c3e50; /* Dark grayish blue */
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+header input[type="text"] {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Course List Grid */
+#course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+/* Course Card */
+.course {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  width: 280px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.course h3 {
+  color: #2c3e50; /* Dark grayish blue */
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.course p {
+  color: #7f8c8d; /* Light gray */
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.course a {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #2c3e50; /* Dark grayish blue */
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.course a:hover {
+  background-color: #34495e; /* Darker shade of blue-gray */
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.back-home-btn {
+  background-color: #2c3e50; /* Dark grayish blue */
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-home-btn:hover {
+  background-color: #34495e; /* Darker shade of blue-gray */
+  transform: translateY(-2px);
+}

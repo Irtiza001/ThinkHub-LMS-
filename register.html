@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Register</title>
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+        <ul> 
+          <li>
+            <img src="assets/home.png" alt="Home" />
+            <a href="profile.html">Dashboard</a>
+          </li>
+          <li>
+            <img src="assets/meeting.png" alt="Courses" />
+            <a href="course.html">Courses</a>
+          </li>
+          <li>
+            <img src="assets/mark.png" alt="Attendance" />
+            <a href="Sattendance.html">Attendance</a>
+          </li>
+          <li>
+            <img src="assets/test.png" alt="Results" />
+            <a href="grade.html">Results</a>
+          </li>
+          <li>
+            <img src="assets/setting.png" alt="Settings" />
+            <a href="setting.html">Settings</a>
+          </li>
+          <li>
+            <img src="assets/progress.png" alt="Progress" />
+            <a href="progress.html">Progress</a>
+          </li>
+          <li>
+            <img src="assets/register.png" alt="Register" />
+            <a href="register.html">Register</a>
+          </li>
+          <li>
+            <img src="assets/logout.png" alt="Sign Out" />
+            <a href="logout.html">Sign Out</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </aside>
+    
+    <div class="main">
+      <h1 class="page-title">Register</h1>
+      <div class="form-container">
+        <form>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter full name" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter email" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required />
+
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Re-enter password" required />
+
+          <label for="semester">Semester</label>
+          <select id="semester">
+            <option value="" disabled selected>Select semester</option>
+            <option>Spring 2025</option>
+            <option>Fall 2024</option>
+          </select>
+
+          <label for="course">Course</label>
+          <select id="course">
+            <option value="" disabled selected>Select course</option>
+            <option>Database Systems</option>
+            <option>Operating Systems</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
