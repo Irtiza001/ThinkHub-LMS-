@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Lecture | ThinkHub Teacher Portal</title>
+    <link rel="stylesheet" href="teacher_upload_lecture.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+            <p class="portal-title">ThinkHub Academic Portal</p>
+            <nav>
+                <ul class="nav">
+                    <li>
+                        <img src="assets/home.png" alt="Dashboard">
+                        <a href="teacher_dashboard.html">Dashboard</a>
+                      </li>
+                      <li>
+                        <img src="assets/user.png" alt="Profile">
+                        <a href="teacher_profile.html">Profile</a>
+                      </li>
+                      <li>
+                        <img src="assets/meeting.png" alt="Courses">
+                        <a href="manage_courses.html">Manage Courses</a>
+                      </li>
+                      <li>
+                        <img src="assets/lec.png" alt="Lectures">
+                        <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                      </li>
+                      <li>
+                        <img src="assets/mark.png" alt="Attendance">
+                        <a href="attendance_teacher.html">Mark Attendance</a>
+                      </li>
+                      <li class="active">
+                        <img src="assets/test.png" alt="Results">
+                        <a href="evaluate_results.html">Evaluate Results</a>
+                      </li>
+                      <li>
+                        <img src="assets/ann.png" alt="Announcements">
+                        <a href="teacher_announcements.html">Announcements</a>
+                      </li>
+                      <li>
+                        <img src="assets/setting.png" alt="Settings">
+                        <a href="teacher_setting.html">Settings</a>
+                      </li>
+                      <li>
+                        <img src="assets/logout.png" alt="Sign Out">
+                        <a href="teacher_logout.html">Sign Out</a>
+                      </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="page-title"><i class="fas fa-upload"></i> Upload Lecture</h1>
+                </div>
+                <div class="header-right">
+                    <div class="profile-container">
+                        <img src="assets/profile.jpg" alt="Profile" class="profile-image" />
+                        <span class="profile-name">Ishaq Raza</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <a href="teacher_dashboard.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+
+                <div class="upload-card">
+                    <h2 class="card-title">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload New Lecture
+                    </h2>
+
+                    <form class="upload-form" id="uploadForm" action="#" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Lecture Title <span>*</span></label>
+                            <input type="text" id="title" name="title" class="form-input" placeholder="Enter lecture title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Lecture Description <span>*</span></label>
+                            <textarea id="description" name="description" class="form-input" placeholder="Provide a brief description of the lecture content..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Lecture File <span>*</span></label>
+                            <div class="file-upload" id="fileUploadArea">
+                                <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                                <div class="file-upload-text">
+                                    <h4>Drag & drop your file here</h4>
+                                    <p>or click to browse files</p>
+                                    <p class="file-types">(PDF, PPTX, MP4, MOV - Max 500MB)</p>
+                                </div>
+                                <input type="file" id="file" name="file" class="file-input" accept=".pdf,.pptx,.mp4,.mov" required>
+                            </div>
+                            <div class="file-preview" id="filePreview">
+                                <div class="file-info">
+                                    <i class="fas fa-file-alt file-icon"></i>
+                                    <div class="file-details">
+                                        <div class="file-name" id="fileName">No file selected</div>
+                                        <div class="file-size" id="fileSize">0 KB</div>
+                                    </div>
+                                    <i class="fas fa-times remove-file" id="removeFile"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-upload"></i> Upload Lecture
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('file');
+            const filePreview = document.getElementById('filePreview');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+            const removeFile = document.getElementById('removeFile');
+            const fileUploadArea = document.getElementById('fileUploadArea');
+
+            // Handle file selection
+            fileInput.addEventListener('change', function(e) {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    const fileType = file.type.split('/')[0];
+                    let iconClass = 'fa-file-alt';
+                    
+                    // Set appropriate icon based on file type
+                    if (fileType === 'video') {
+                        iconClass = 'fa-file-video';
+                    } else if (file.name.endsWith('.pdf')) {
+                        iconClass = 'fa-file-pdf';
+                    } else if (file.name.endsWith('.pptx')) {
+                        iconClass = 'fa-file-powerpoint';
+                    }
+                    
+                    // Update preview
+                    document.querySelector('.file-icon').className = `fas ${iconClass} file-icon`;
+                    fileName.textContent = file.name;
+                    fileSize.textContent = formatFileSize(file.size);
+                    filePreview.classList.add('active');
+                }
+            });
+
+            // Remove file
+            removeFile.addEventListener('click', function(e) {
+                e.stopPropagation();
+                fileInput.value = '';
+                filePreview.classList.remove('active');
+            });
+
+            // Drag and drop functionality
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                fileUploadArea.style.borderColor = 'var(--primary-color)';
+                fileUploadArea.style.backgroundColor = 'rgba(78, 115, 223, 0.1)';
+            }
+
+            function unhighlight() {
+                fileUploadArea.style.borderColor = 'var(--border-color)';
+                fileUploadArea.style.backgroundColor = 'var(--light-color)';
+            }
+
+            fileUploadArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                fileInput.files = files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+
+            // Helper function to format file size
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+            }
+        });
+    </script>
+</body>
+</html>

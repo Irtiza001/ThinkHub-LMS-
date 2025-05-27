@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Teacher Profile</title>
+  <link rel="stylesheet" href="teacher_profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+          <ul class="nav">
+              <li>
+                  <img src="assets/home.png" alt="Dashboard">
+                  <a href="teacher_dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <img src="assets/user.png" alt="Profile">
+                  <a href="teacher_profile.html">Profile</a>
+                </li>
+                <li>
+                  <img src="assets/meeting.png" alt="Courses">
+                  <a href="manage_courses.html">Manage Courses</a>
+                </li>
+                <li>
+                  <img src="assets/lec.png" alt="Lectures">
+                  <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                </li>
+                <li>
+                  <img src="assets/mark.png" alt="Attendance">
+                  <a href="attendance_teacher.html">Mark Attendance</a>
+                </li>
+                <li class="active">
+                  <img src="assets/test.png" alt="Results">
+                  <a href="evaluate_results.html">Evaluate Results</a>
+                </li>
+                <li>
+                  <img src="assets/ann.png" alt="Announcements">
+                  <a href="teacher_announcements.html">Announcements</a>
+                </li>
+                <li>
+                  <img src="assets/setting.png" alt="Settings">
+                  <a href="teacher_setting.html">Settings</a>
+                </li>
+                <li>
+                  <img src="assets/logout.png" alt="Sign Out">
+                  <a href="teacher_logout.html">Sign Out</a>
+                </li>
+          </ul>
+      </nav>
+  </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <div class="header-left">
+          <h1 class="page-title"><i class="fas fa-user"></i> Teacher Profile</h1>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="profile-container">
+            <img src="assets/profile.jpg" alt="Profile" class="profile-image" />
+            <span class="profile-name">Ishaq Raza</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <div class="profile-grid">
+          <!-- Profile Card -->
+          <section class="profile-section">
+            <div class="profile-card">
+              <div class="card-header">
+                <h2><i class="fas fa-id-card"></i> Profile Information</h2>
+                <button class="edit-button" id="editProfileBtn">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+              </div>
+              
+              <div class="profile-content">
+                <div class="profile-picture-container">
+                  <div class="profile-picture-wrapper">
+                    <img src="assets/defaut_profile.webp" alt="Profile" class="profile-picture" id="profilePicture" />
+                    
+                    <label for="profileUpload" class="upload-button" title="Change Photo">
+                      <i class="fas fa-camera"></i>
+                    </label>
+                    
+                    <input type="file" id="profileUpload" accept="image/*" hidden>
+                  </div>
+                </div>
+                
+                
+                <div class="profile-details">
+                  <table class="info-table">
+                    <tr>
+                      <td class="info-label">Full Name</td>
+                      <td class="info-value">Ishaq Raza</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Date of Birth</td>
+                      <td class="info-value">January 2, 1930</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Email</td>
+                      <td class="info-value">ishaq.raza@nu.pk</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Gender</td>
+                      <td class="info-value">Male</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Contact</td>
+                      <td class="info-value">0300–Ishaq</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Campus</td>
+                      <td class="info-value">Lahore</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Discipline</td>
+                      <td class="info-value">BSCS</td>
+                    </tr>
+                    <tr>
+                      <td class="info-label">Salary</td>
+                      <td class="info-value">Rs. 100,000</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              
+              <!-- Image Cropper Modal -->
+              <div class="modal" id="imageCropperModal">
+                <div class="modal-content">
+                  <div class="modal-footer">
+                    <button class="secondary-button cancel-btn">Cancel</button>
+                    <button class="primary-button" id="cropSaveBtn">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Social Media & Contact -->
+          <section class="social-section">
+            <div class="social-card">
+              <div class="card-header">
+                <h2><i class="fas fa-share-alt"></i> Social Media</h2>
+                <button class="edit-button" id="editSocialBtn">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+              </div>
+              
+              <div class="card-body">
+                <div class="social-links">
+                  <div class="social-item">
+                    <div class="social-icon">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="social-info">
+                      <span class="social-platform">LinkedIn</span>
+                      <a href="#" class="social-link">linkedin.com/ishaq-raza</a>
+                    </div>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-info">
+                      <span class="social-platform">Twitter</span>
+                      <a href="#" class="social-link">twitter.com/ishaq_raza</a>
+                    </div>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon">
+                      <i class="fab fa-researchgate"></i>
+                    </div>
+                    <div class="social-info">
+                      <span class="social-platform">ResearchGate</span>
+                      <a href="#" class="social-link">researchgate.net/ishaq_raza</a>
+                    </div>
+                  </div>
+                  <div class="social-item">
+                    <div class="social-icon">
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-info">
+                      <span class="social-platform">GitHub</span>
+                      <a href="#" class="social-link">github.com/ishaq-raza</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="social-form" style="display: none;">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </label>
+                    <input type="text" class="form-input" placeholder="https://linkedin.com/in/username">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fab fa-twitter"></i> Twitter Handle
+                    </label>
+                    <input type="text" class="form-input" placeholder="@username">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fab fa-researchgate"></i> ResearchGate
+                    </label>
+                    <input type="text" class="form-input" placeholder="ResearchGate profile URL">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i class="fab fa-github"></i> GitHub
+                    </label>
+                    <input type="text" class="form-input" placeholder="GitHub username">
+                  </div>
+                  <div class="form-actions">
+                    <button class="secondary-button cancel-btn">Cancel</button>
+                    <button class="primary-button">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills & Qualifications -->
+          <section class="qualifications-section">
+            <div class="qualifications-card">
+              <div class="card-header">
+                <h2><i class="fas fa-graduation-cap"></i> Qualifications</h2>
+                <button class="edit-button" id="editSkillsBtn">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+              </div>
+              
+              <div class="card-body">
+                <div class="qualifications-list">
+                  <div class="qualification-item">
+                    <div class="qualification-icon">
+                      <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="qualification-details">
+                      <h3 class="qualification-title">PhD in Computer Science</h3>
+                      <p class="qualification-meta">
+                        <span class="institution">University of Lahore</span>
+                        <span class="year">2015</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="qualification-item">
+                    <div class="qualification-icon">
+                      <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="qualification-details">
+                      <h3 class="qualification-title">MS in Software Engineering</h3>
+                      <p class="qualification-meta">
+                        <span class="institution">COMSATS University</span>
+                        <span class="year">2010</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="qualification-item">
+                    <div class="qualification-icon">
+                      <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="qualification-details">
+                      <h3 class="qualification-title">BS in Computer Science</h3>
+                      <p class="qualification-meta">
+                        <span class="institution">University of Punjab</span>
+                        <span class="year">2005</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="qualifications-form" style="display: none;">
+                  <div class="form-group">
+                    <label class="form-label">Degree Title</label>
+                    <input type="text" class="form-input" placeholder="e.g. PhD in Computer Science">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Institution</label>
+                    <input type="text" class="form-input" placeholder="University/School name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Year of Completion</label>
+                    <input type="text" class="form-input" placeholder="YYYY">
+                  </div>
+                  <button class="add-more-button">
+                    <i class="fas fa-plus"></i> Add Another Qualification
+                  </button>
+                  <div class="form-actions">
+                    <button class="secondary-button cancel-btn">Cancel</button>
+                    <button class="primary-button">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Security Settings -->
+          <section class="security-section">
+            <div class="security-card">
+              <div class="card-header">
+                <h2><i class="fas fa-shield-alt"></i> Security</h2>
+              </div>
+              
+              <div class="card-body">
+                <div class="security-item">
+                  <div class="security-icon">
+                    <i class="fas fa-key"></i>
+                  </div>
+                  <div class="security-details">
+                    <h3 class="security-title">Password</h3>
+                    <p class="security-description">Last changed 3 months ago</p>
+                  </div>
+                  <button class="primary-button change-btn">Change Password</button>
+                </div>
+                
+                <div class="security-item">
+                  <div class="security-icon">
+                    <i class="fas fa-lock"></i>
+                  </div>
+                  <div class="security-details">
+                    <h3 class="security-title">Two-Factor Authentication</h3>
+                    <p class="security-description">Add an extra layer of security</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="twoFactorToggle" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="two-factor-setup" id="twoFactorSetup">
+                  <h4 class="setup-title">Set Up Two-Factor Authentication</h4>
+                  <div class="setup-steps">
+                    <div class="step">
+                      <span class="step-number">1</span>
+                      <p class="step-text">Download an authenticator app like Google Authenticator or Authy</p>
+                    </div>
+                    <div class="step">
+                      <span class="step-number">2</span>
+                      <p class="step-text">Scan this QR code with your app</p>
+                      <div class="qr-code">
+                        <img src="assets/qr-code.png" alt="QR Code">
+                      </div>
+                    </div>
+                    <div class="step">
+                      <span class="step-number">3</span>
+                      <p class="step-text">Enter the 6-digit code to verify</p>
+                      <div class="verification-code">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                        <input type="text" maxlength="1" pattern="[0-9]" class="code-input">
+                      </div>
+                    </div>
+                  </div>
+                  <button class="primary-button verify-btn">Verify & Enable</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer-copyright">
+            Designed by Irtaza Afzal<br/>All Rights Reserved © 2025
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script src="teacher_profile.js"></script>
+</body>
+</html>

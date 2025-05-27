@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thinkhub - Attendance</title>
+    <link rel="stylesheet" href="attendance_teacher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <img src="assets/logo.png" class="logo" alt="Logo">
+            <p class="portal-title">ThinkHub Academic Portal</p>
+            <nav>
+            <ul class="nav">
+                <li>
+                    <img src="assets/home.png" alt="Dashboard">
+                    <a href="teacher_dashboard.html">Dashboard</a>
+                  </li>
+                  <li>
+                    <img src="assets/user.png" alt="Profile">
+                    <a href="teacher_profile.html">Profile</a>
+                  </li>
+                  <li>
+                    <img src="assets/meeting.png" alt="Courses">
+                    <a href="manage_courses.html">Manage Courses</a>
+                  </li>
+                  <li>
+                    <img src="assets/lec.png" alt="Lectures">
+                    <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                  </li>
+                  <li>
+                    <img src="assets/mark.png" alt="Attendance">
+                    <a href="attendance_teacher.html">Mark Attendance</a>
+                  </li>
+                  <li class="active">
+                    <img src="assets/test.png" alt="Results">
+                    <a href="evaluate_results.html">Evaluate Results</a>
+                  </li>
+                  <li>
+                    <img src="assets/ann.png" alt="Announcements">
+                    <a href="teacher_announcements.html">Announcements</a>
+                  </li>
+                  <li>
+                    <img src="assets/setting.png" alt="Settings">
+                    <a href="teacher_setting.html">Settings</a>
+                  </li>
+                  <li>
+                    <img src="assets/logout.png" alt="Sign Out">
+                    <a href="teacher_logout.html">Sign Out</a>
+                  </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content">
+            <div class="topbar">
+                <h1>Attendance</h1>
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="selection-panel">
+                <div class="selection-header">
+                    <img src="assets/selection.png" class="selection-icon">
+                    <h2>Selection</h2>
+                </div>
+                <div class="selection-form-container">
+                  <h3 class="form-title">Course Attendance Filter</h3>
+                  <form class="selection-form">
+                      <div class="form-group">
+                          <label for="semester">Semester</label>
+                          <select id="semester" class="form-select">
+                              <option value="">Select Semester</option>
+                              <option value="spring2025" selected>Spring 2025</option>
+                              <option value="fall2024">Fall 2024</option>
+                              <option value="summer2024">Summer 2024</option>
+                          </select>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="course">Course</label>
+                          <select id="course" class="form-select">
+                              <option value="">Select Course</option>
+                              <option value="dbms" selected>Database Systems</option>
+                              <option value="webdev">Web Development</option>
+                              <option value="dsa">Data Structures & Algorithms</option>
+                              <option value="os">Operating Systems</option>
+                          </select>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="department">Department</label>
+                          <select id="department" class="form-select">
+                              <option value="">Select Department</option>
+                              <option value="cs">Computer Science (CS)</option>
+                              <option value="it" selected>Information Technology (IT)</option>
+                              <option value="se">Software Engineering</option>
+                              <option value="ai">Artificial Intelligence</option>
+                          </select>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="attendance-date">Date</label>
+                          <input type="date" id="attendance-date" class="form-date" value="2025-01-31">
+                      </div>
+              
+                      <div class="form-actions">
+                          <button type="submit" class="btn-primary">
+                              <i class="fas fa-filter"></i> Apply Filters
+                          </button>
+                          <button type="reset" class="btn-secondary">
+                              <i class="fas fa-redo"></i> Reset
+                          </button>
+                      </div>
+                  </form>
+              </div>
+            </div>
+
+            <div class="student-panel">
+                <div class="student-list">
+                    <label>Student List</label>
+                    <textarea></textarea>
+                    <textarea></textarea>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn present">Mark Present</button>
+                    <button class="btn absent">Mark Absent</button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <footer>Designed by Irtaza Afzal<br/>All Rights Reserved © 2025</footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

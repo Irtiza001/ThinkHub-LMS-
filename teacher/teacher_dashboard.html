@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Teacher Dashboard</title>
+  <link rel="stylesheet" href="teacher_dashboard.css" />
+  <!-- Chart.js for analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+
+</head>
+<body>
+  <!-- <div class="container">  -->
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+      <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+          <ul class="nav">
+              <li>
+                  <img src="assets/home.png" alt="Dashboard">
+                  <a href="teacher_dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <img src="assets/user.png" alt="Profile">
+                  <a href="teacher_profile.html">Profile</a>
+                </li>
+                <li>
+                  <img src="assets/meeting.png" alt="Courses">
+                  <a href="manage_courses.html">Manage Courses</a>
+                </li>
+                <li>
+                  <img src="assets/lec.png" alt="Lectures">
+                  <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                </li>
+                <li>
+                  <img src="assets/mark.png" alt="Attendance">
+                  <a href="attendance_teacher.html">Mark Attendance</a>
+                </li>
+                <li class="active">
+                  <img src="assets/test.png" alt="Results">
+                  <a href="evaluate_results.html">Evaluate Results</a>
+                </li>
+                <li>
+                  <img src="assets/ann.png" alt="Announcements">
+                  <a href="teacher_announcements.html">Announcements</a>
+                </li>
+                <li>
+                  <img src="assets/setting.png" alt="Settings">
+                  <a href="teacher_setting.html">Settings</a>
+                </li>
+                <li>
+                  <img src="assets/logout.png" alt="Sign Out">
+                  <a href="teacher_logout.html">Sign Out</a>
+                </li>
+          </ul>
+      </nav>
+  </div>
+
+    <!-- Main Content -->
+    <main class="main-content"> 
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div>
+          <h1>Welcome to ThinkHub Teacher Panel</h1>
+          <!-- <p class="current-date"><i class="far fa-calendar-alt"></i> <span id="current-date"></span></p> -->
+        </div>
+        <div class="header-right">
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">3</span>
+            <div class="notification-dropdown">
+              <div class="notification-header">
+                <h4>Notifications</h4>
+                <span class="mark-read">Mark all as read</span>
+              </div>
+              <div class="notification-item new">
+                <i class="fas fa-bullhorn notification-icon"></i>
+                <div>
+                  <p>New assignment submitted by 5 students</p>
+                  <small>10 minutes ago</small>
+                </div>
+              </div>
+              <div class="notification-item new">
+                <i class="fas fa-user-clock notification-icon"></i>
+                <div>
+                  <p>3 students marked absent today</p>
+                  <small>25 minutes ago</small>
+                </div>
+              </div>
+              <div class="notification-item">
+                <i class="fas fa-calendar-check notification-icon"></i>
+                <div>
+                  <p>Faculty meeting tomorrow at 11 AM</p>
+                  <small>2 hours ago</small>
+                </div>
+              </div>
+              <div class="view-all">View all notifications</div>
+            </div>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-action-btn"><i class="fas fa-plus"></i></button>
+            <div class="quick-actions-dropdown">
+              <a href="upload_lecture.html"><i class="fas fa-upload"></i> Upload Lecture</a>
+              <a href="teacher_announcements.html"><i class="fas fa-bullhorn"></i> Post Announcement</a>
+              <a href="attendance_teacher.html"><i class="fas fa-clipboard-check"></i> Take Attendance</a>
+              <a href="evaluate_results.html"><i class="fas fa-check-circle"></i> Grade Assignment</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Teacher Profile Summary -->
+      <section class="profile-summary">
+        <div class="profile-box">
+          <img src="assets/defaut_profile.webp" alt="Profile Picture" class="profile-pic-large" />
+          <div class="profile-details">
+            <h2>Mr. Asif Khan <span class="status-badge active"><i class="fas fa-circle"></i> Active</span></h2>
+            <p><i class="fas fa-envelope"></i> asif.khan@thinkhub.edu</p>
+            <p><i class="fas fa-building"></i> Computer Science Department</p>
+            <p><i class="fas fa-phone"></i> +92-300-1234567</p>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">32</span>
+                <span class="stat-label">Students</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Cards -->
+      <section class="cards">
+        <a href="manage_courses.html" class="card">
+          <div class="card-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Total Courses</h3>
+          <p>3 Assigned</p>
+          <div class="card-progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </a>
+        <a href="upload_lecture.html" class="card">
+          <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Lectures Uploaded</h3>
+          <p>5 Today</p>
+          <div class="card-progress">
+            <div class="progress-bar" style="width: 45%"></div>
+          </div>
+        </a>
+        <a href="evaluate_results.html" class="card">
+          <div class="card-icon"><i class="fas fa-check-double"></i></div>
+          <h3>Results Pending</h3>
+          <p>12 Evaluations</p>
+          <div class="card-progress">
+            <div class="progress-bar warning" style="width: 60%"></div>
+          </div>
+        </a>
+        <a href="teacher_announcements.html" class="card">
+          <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Announcements</h3>
+          <p>1 New</p>
+          <div class="card-progress">
+            <div class="progress-bar" style="width: 30%"></div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Analytics Section -->
+      <!-- <section class="analytics-section">
+        <div class="analytics-card">
+          <div class="analytics-header">
+            <h3><i class="fas fa-chart-line"></i> Student Performance</h3>
+            <select class="time-filter">
+              <option>Last 7 Days</option>
+              <option>Last Month</option>
+              <option>Last Semester</option>
+            </select>
+          </div>
+          <canvas id="performanceChart"></canvas>
+        </div>
+        
+        <div class="analytics-card">
+          <div class="analytics-header">
+            <h3><i class="fas fa-user-check"></i> Attendance Trends</h3>
+            <select class="time-filter">
+              <option>Current Week</option>
+              <option>Current Month</option>
+              <option>Current Semester</option>
+            </select>
+          </div>
+          <canvas id="attendanceChart"></canvas>
+        </div>
+      </section> -->
+
+      <!-- Recent Activity Feed -->
+      <!-- <section class="activity-feed">
+        <h2><i class="fas fa-history"></i> Recent Activity</h2>
+        <div class="activity-items">
+          <div class="activity-item">
+            <div class="activity-icon"><i class="fas fa-upload"></i></div>
+            <div class="activity-content">
+              <p>Uploaded new lecture "Advanced Algorithms - Week 3"</p>
+              <small>Today, 10:45 AM</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="activity-content">
+              <p>Graded assignments for Data Structures class</p>
+              <small>Yesterday, 4:30 PM</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
+            <div class="activity-content">
+              <p>3 new students enrolled in your Web Development course</p>
+              <small>2 days ago</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon"><i class="fas fa-comment-alt"></i></div>
+            <div class="activity-content">
+              <p>Received 5 new student messages</p>
+              <small>3 days ago</small>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="view-all-activities">View All Activity <i class="fas fa-arrow-right"></i></a>
+      </section> -->
+
+      <!-- Overview Cards -->
+      <section class="overview">
+        <div class="card">
+          <h3><i class="fas fa-calendar-day"></i> Today's Schedule</h3>
+          <div class="schedule-item">
+            <span class="time">09:00 - 10:30</span>
+            <span class="course">BSCS-3A - Algorithms</span>
+          </div>
+          <div class="schedule-item">
+            <span class="time">11:00 - 12:30</span>
+            <span class="course">BSIT-1B - Web Dev</span>
+          </div>
+          <div class="schedule-item">
+            <span class="time">02:00 - 03:30</span>
+            <span class="course">Faculty Meeting</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-tasks"></i> Pending Tasks</h3>
+          <div class="task-list">
+            <div class="task-item">
+              <input type="checkbox" id="task1">
+              <label for="task1">Grade Assignment 2</label>
+            </div>
+            <div class="task-item">
+              <input type="checkbox" id="task2">
+              <label for="task2">Upload Lecture Notes</label>
+            </div>
+            <div class="task-item">
+              <input type="checkbox" id="task3">
+              <label for="task3">Prepare Midterm Papers</label>
+            </div>
+          </div>
+          <button class="add-task-btn"><i class="fas fa-plus"></i> Add Task</button>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-chalkboard-teacher"></i> Upcoming Classes</h3>
+          <div class="upcoming-class">
+            <div class="class-info">
+              <span class="class-time">Tomorrow, 09:00 AM</span>
+              <span class="class-name">BSCS-3A - Algorithms</span>
+            </div>
+            <button class="prepare-btn">Prepare <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="upcoming-class">
+            <div class="class-info">
+              <span class="class-time">Tomorrow, 11:00 AM</span>
+              <span class="class-name">BSIT-1B - Web Dev</span>
+            </div>
+            <button class="prepare-btn">Prepare <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Announcements Section -->
+      <section class="announcements">
+        <div class="announcements-header">
+          <h2><i class="fas fa-bullhorn"></i> Latest Announcements</h2>
+          <button class="new-announcement-btn"><i class="fas fa-plus"></i> New Announcement</button>
+        </div>
+        <ul>
+          <li>
+            <i class="fas fa-graduation-cap announcement-icon"></i>
+            <div>
+              <h4>Semester exams start next week</h4>
+              <p>All students must check their exam schedules on the portal.</p>
+              <small>Posted 2 days ago</small>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-calendar-alt announcement-icon"></i>
+            <div>
+              <h4>Assignment 2 deadline extended</h4>
+              <p>New deadline is Friday, 5PM. No further extensions.</p>
+              <small>Posted 5 days ago</small>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-tools announcement-icon"></i>
+            <div>
+              <h4>LMS maintenance</h4>
+              <p>The system will be down on Sunday from 2 PM to 5 PM for upgrades.</p>
+              <small>Posted 1 week ago</small>
+            </div>
+          </li>
+        </ul>
+        <a href="teacher_announcements.html" class="view-all-announcements">View All Announcements <i class="fas fa-arrow-right"></i></a>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="footer-copyright">
+            Designed by Irtaza Afzal<br/>All Rights Reserved © 2025
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  <!-- </div> -->
+</body>
+</html>

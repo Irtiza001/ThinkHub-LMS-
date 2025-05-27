@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkHub - Settings</title>
+  <link rel="stylesheet" href="teacher_setting.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar --> 
+    <div class="sidebar">
+      <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+          <ul class="nav">
+              <li>
+                  <img src="assets/home.png" alt="Dashboard">
+                  <a href="teacher_dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <img src="assets/user.png" alt="Profile">
+                  <a href="teacher_profile.html">Profile</a>
+                </li>
+                <li>
+                  <img src="assets/meeting.png" alt="Courses">
+                  <a href="manage_courses.html">Manage Courses</a>
+                </li>
+                <li>
+                  <img src="assets/lec.png" alt="Lectures">
+                  <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                </li>
+                <li>
+                  <img src="assets/mark.png" alt="Attendance">
+                  <a href="attendance_teacher.html">Mark Attendance</a>
+                </li>
+                <li class="active">
+                  <img src="assets/test.png" alt="Results">
+                  <a href="evaluate_results.html">Evaluate Results</a>
+                </li>
+                <li>
+                  <img src="assets/ann.png" alt="Announcements">
+                  <a href="teacher_announcements.html">Announcements</a>
+                </li>
+                <li>
+                  <img src="assets/setting.png" alt="Settings">
+                  <a href="teacher_setting.html">Settings</a>
+                </li>
+                <li>
+                  <img src="assets/logout.png" alt="Sign Out">
+                  <a href="teacher_logout.html">Sign Out</a>
+                </li>
+          </ul>
+      </nav>
+  </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="header-left">
+          <h1 class="page-title"><i class="fas fa-cog"></i> Settings</h1>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <input type="text" placeholder="Search settings..." class="search-input" />
+            <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="profile-container">
+            <img src="assets/profile.jpg" alt="Profile" class="profile-image" />
+            <span class="profile-name">Ishaq Raza</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <div class="settings-grid">
+          <!-- Account Settings Card -->
+          <section class="settings-card">
+            <div class="card-header">
+              <h2><i class="fas fa-user-cog"></i> Account Settings</h2>
+            </div>
+            <div class="card-body">
+              <form class="settings-form">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" placeholder="Ishaq Raza" value="Ishaq Raza" />
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-input" placeholder="ishaq.raza@nu.pk" value="ishaq.raza@nu.pk" />
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-input" placeholder="0300-xxxxxxx" value="0300-Ishaq" />
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">New Password</label>
+                  <input type="password" class="form-input" placeholder="Enter new password" />
+                  <small class="form-hint">Leave blank to keep current password</small>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Confirm Password</label>
+                  <input type="password" class="form-input" placeholder="Confirm new password" />
+                </div>
+                
+                <div class="form-actions">
+                  <button type="button" class="secondary-button">Cancel</button>
+                  <button type="submit" class="primary-button">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </section>
+          
+          <!-- Notification Settings Card -->
+          <section class="settings-card">
+            <div class="card-header">
+              <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+            </div>
+            <div class="card-body">
+              <div class="toggle-group">
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>Email Notifications</h3>
+                    <p>Receive important updates via email</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>System Notifications</h3>
+                    <p>Get alerts for new announcements</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>Assignment Submissions</h3>
+                    <p>Notify when students submit work</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>Attendance Alerts</h3>
+                    <p>Get notified about student absences</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Display Settings Card -->
+          <section class="settings-card">
+            <div class="card-header">
+              <h2><i class="fas fa-desktop"></i> Display Settings</h2>
+            </div>
+            <div class="card-body">
+              <div class="toggle-group">
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>Dark Mode</h3>
+                    <p>Switch to dark color scheme</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>High Contrast Mode</h3>
+                    <p>Increase color contrast for readability</p>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                
+                <div class="toggle-item">
+                  <div class="toggle-info">
+                    <h3>Font Size</h3>
+                    <p>Adjust text size for better visibility</p>
+                  </div>
+                  <select class="form-select">
+                    <option>Small</option>
+                    <option selected>Medium</option>
+                    <option>Large</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Privacy Settings Card -->
+          <section class="settings-card">
+            <div class="card-header">
+              <h2><i class="fas fa-shield-alt"></i> Privacy & Security</h2>
+            </div>
+            <div class="card-body">
+              <div class="privacy-options">
+                <div class="privacy-item">
+                  <div class="privacy-info">
+                    <h3>Two-Factor Authentication</h3>
+                    <p>Add an extra layer of security to your account</p>
+                  </div>
+                  <button class="secondary-button">Enable</button>
+                </div>
+                
+                <div class="privacy-item">
+                  <div class="privacy-info">
+                    <h3>Login History</h3>
+                    <p>View recent account activity</p>
+                  </div>
+                  <button class="secondary-button">View</button>
+                </div>
+                
+                <div class="privacy-item">
+                  <div class="privacy-info">
+                    <h3>Data Export</h3>
+                    <p>Download a copy of your data</p>
+                  </div>
+                  <button class="secondary-button">Request</button>
+                </div>
+                
+                <div class="privacy-item">
+                  <div class="privacy-info">
+                    <h3>Account Deletion</h3>
+                    <p>Permanently delete your account</p>
+                  </div>
+                  <button class=" primary-button">Delete Account</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer class="dashboard-footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+          <div class="footer-copyright">
+            Designed by Irtaza Afzal<br/>All Rights Reserved © 2025
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

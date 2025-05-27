@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Announcements</title>
+  <link rel="stylesheet" href="teacher_announcements.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <button onclick="history.back()" class="back-button" title="Go Back">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <h1>Teacher Announcement Page</h1>
+    
+  </header>
+  
+  
+
+  <main>
+    <section class="form-section">
+      <h2>Post a New Announcement</h2>
+      <form id="announcementForm">
+        <input type="text" id="title" placeholder="Announcement Title" required>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+        <button type="submit">Post Announcement</button>
+      </form>
+    </section>
+
+    <section class="announcements">
+      <h2>Previous Announcements</h2>
+      <div id="announcementList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

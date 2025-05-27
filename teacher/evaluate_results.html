@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Marks | ThinkHub</title>
+  <link rel="stylesheet" href="evaluate_results.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- Sidebar --> 
+  <div class="sidebar">
+    <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+    <p class="portal-title">ThinkHub Academic Portal</p>
+    <nav>
+      <ul class="nav">
+        <li>
+          <img src="assets/home.png" alt="Dashboard">
+          <a href="teacher_dashboard.html">Dashboard</a>
+        </li>
+        <li>
+          <img src="assets/user.png" alt="Profile">
+          <a href="teacher_profile.html">Profile</a>
+        </li>
+        <li>
+          <img src="assets/meeting.png" alt="Courses">
+          <a href="manage_courses.html">Manage Courses</a>
+        </li>
+        <li>
+          <img src="assets/lec.png" alt="Lectures">
+          <a href="teacher_upload_lecture.html">Upload Lectures</a>
+        </li>
+        <li>
+          <img src="assets/mark.png" alt="Attendance">
+          <a href="attendance_teacher.html">Mark Attendance</a>
+        </li>
+        <li class="active">
+          <img src="assets/test.png" alt="Results">
+          <a href="evaluate_results.html">Evaluate Results</a>
+        </li>
+        <li>
+          <img src="assets/ann.png" alt="Announcements">
+          <a href="teacher_announcements.html">Announcements</a>
+        </li>
+        <li>
+          <img src="assets/setting.png" alt="Settings">
+          <a href="teacher_setting.html">Settings</a>
+        </li>
+        <li>
+          <img src="assets/logout.png" alt="Sign Out">
+          <a href="teacher_logout.html">Sign Out</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header>
+      <h1><i class="fas fa-upload"></i> Upload Student Marks</h1>
+    </header>
+
+    <!-- Course Selection -->
+    <section class="section">
+      <h2><i class="fas fa-filter"></i> Filter Students</h2>
+      <div class="selectors">
+        <select id="semester">
+          <option value="">Select Semester</option>
+          <option value="1">Semester 1</option>
+          <option value="2">Semester 2</option>
+          <option value="3">Semester 3</option>
+        </select>
+        <select id="course">
+          <option value="">Select Course</option>
+          <option value="math">Mathematics</option>
+          <option value="cs">Computer Science</option>
+          <option value="physics">Physics</option>
+        </select>
+        <select id="section">
+          <option value="">Select Department</option>
+          <option value="se">Software Engineering (SE)</option>
+          <option value="cs">Computer Science (CS)</option>
+          <option value="it">Information Technology (IT)</option>
+        </select>
+      </div>
+      <button type="button" id="filter-btn">
+        <i class="fas fa-search"></i> Filter Students
+      </button>
+    </section>
+
+    <!-- Upload Sections -->
+    <section class="section">
+      <h2><i class="fas fa-question-circle"></i> Quiz Marks</h2>
+      <div class="student-list">
+        <div class="student-card">
+          <span class="student-name"><i class="fas fa-user-graduate"></i> 1. Ali Ahmed</span>
+          <input type="number" placeholder="Enter marks (0-100)" id="quiz-1" min="0" max="100">
+          <button onclick="uploadMarks(1, 'quiz')">
+            <i class="fas fa-upload"></i> Upload
+          </button>
+        </div>
+        <div class="student-card">
+          <span class="student-name"><i class="fas fa-user-graduate"></i> 2. Sara Khan</span>
+          <input type="number" placeholder="Enter marks (0-100)" id="quiz-2" min="0" max="100">
+          <button onclick="uploadMarks(2, 'quiz')">
+            <i class="fas fa-upload"></i> Upload
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-tasks"></i> Assignment Marks</h2>
+      <div class="student-list">
+        <div class="student-card">
+          <span class="student-name"><i class="fas fa-user-graduate"></i> 1. Ali Ahmed</span>
+          <input type="number" placeholder="Enter marks (0-100)" id="assignment-1" min="0" max="100">
+          <button onclick="uploadMarks(1, 'assignment')">
+            <i class="fas fa-upload"></i> Upload
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-book-open"></i> Midterm Exam Marks</h2>
+      <div class="student-list">
+        <div class="student-card">
+          <span class="student-name"><i class="fas fa-user-graduate"></i> 1. Ali Ahmed</span>
+          <input type="number" placeholder="Enter marks (0-100)" id="midterm-1" min="0" max="100">
+          <button onclick="uploadMarks(1, 'midterm')">
+            <i class="fas fa-upload"></i> Upload
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Final Exam Marks</h2>
+      <div class="student-list">
+        <div class="student-card">
+          <span class="student-name"><i class="fas fa-user-graduate"></i> 1. Ali Ahmed</span>
+          <input type="number" placeholder="Enter marks (0-100)" id="final-1" min="0" max="100">
+          <button onclick="uploadMarks(1, 'final')">
+            <i class="fas fa-upload"></i> Upload
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-file-import"></i> Bulk Upload</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <input type="file" id="marks-file" accept=".csv,.xlsx" style="flex: 1;">
+          <button type="button">
+            <i class="fas fa-file-import"></i> Import Marks
+          </button>
+        </div>
+        <small style="color: #666;">Upload CSV or Excel file with student marks</small>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Designed by Asjad PandaFX</p>
+      <small>&copy; 2000–2020 All Rights Reserved</small>
+    </footer>
+  </main>
+
+  <script>
+    // Sample functions - would be replaced with actual implementation
+    function uploadMarks(studentId, type) {
+      const inputField = document.getElementById(`${type}-${studentId}`);
+      const marks = inputField.value;
+      
+      if (!marks || marks < 0 || marks > 100) {
+        alert('Please enter valid marks between 0-100');
+        return;
+      }
+      
+      // In a real implementation, this would be an API call
+      console.log(`Uploading ${type} marks for student ${studentId}: ${marks}`);
+      alert(`Successfully uploaded ${type} marks for student ${studentId}`);
+      inputField.value = '';
+    }
+
+    document.getElementById('filter-btn').addEventListener('click', function() {
+      const semester = document.getElementById('semester').value;
+      const course = document.getElementById('course').value;
+      const section = document.getElementById('section').value;
+      
+      if (!semester || !course || !section) {
+        alert('Please select all filter options');
+        return;
+      }
+      
+      // In a real implementation, this would filter the student list
+      console.log(`Filtering by: Semester ${semester}, Course ${course}, Section ${section}`);
+      alert('Students filtered successfully');
+    });
+  </script>
+</body>
+</html>

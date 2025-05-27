@@ -1,0 +1,196 @@
+:root {
+  --primary-color: #2c3e50;
+  --primary-hover: #2c3e50;
+  --background-light: #f4f4f4;
+  --background-dark: #121212;
+  --card-light: #fff;
+  --card-dark: #1f1f1f;
+  --text-light: #333;
+  --text-dark: #f0f0f0;
+  --accent-dark: #2a2a2a;
+}
+
+/* Base Reset */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-light);
+  color: var(--text-light);
+  transition: background 0.4s, color 0.4s;
+  line-height: 1.6;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Form Section & Announcement Section */
+.form-section,
+.announcements {
+  background: var(--card-light);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: background 0.4s;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* Announcement Cards */
+.announcement-card {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.announcement-card h3 {
+  margin-top: 0;
+}
+
+.announcement-card small {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode header {
+  background: #1e1e1e;
+}
+
+body.dark-mode .form-section,
+body.dark-mode .announcements {
+  background: var(--card-dark);
+}
+
+body.dark-mode .announcement-card {
+  background-color: var(--accent-dark);
+  border-color: #444;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode textarea {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode input[type="text"]::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.back-button {
+  background: white;
+  border: none;
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #ddd;
+}

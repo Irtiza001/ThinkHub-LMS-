@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teacher Timetable</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="timetable.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- <div class="main-container"> -->
+    <div class="sidebar">
+      <img src="assets/logo.png" class="logo" alt="ThinkHub Logo">
+      <p class="portal-title">ThinkHub Academic Portal</p>
+      <nav>
+          <ul class="nav">
+              <li>
+                  <img src="assets/home.png" alt="Dashboard">
+                  <a href="teacher_dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <img src="assets/user.png" alt="Profile">
+                  <a href="teacher_profile.html">Profile</a>
+                </li>
+                <li>
+                  <img src="assets/meeting.png" alt="Courses">
+                  <a href="manage_courses.html">Manage Courses</a>
+                </li>
+                <li>
+                  <img src="assets/lec.png" alt="Lectures">
+                  <a href="teacher_upload_lecture.html">Upload Lectures</a>
+                </li>
+                <li>
+                  <img src="assets/mark.png" alt="Attendance">
+                  <a href="attendance_teacher.html">Mark Attendance</a>
+                </li>
+                <li class="active">
+                  <img src="assets/test.png" alt="Results">
+                  <a href="evaluate_results.html">Evaluate Results</a>
+                </li>
+                <li>
+                  <img src="assets/ann.png" alt="Announcements">
+                  <a href="teacher_announcements.html">Announcements</a>
+                </li>
+                <li>
+                  <img src="assets/setting.png" alt="Settings">
+                  <a href="teacher_setting.html">Settings</a>
+                </li>
+                <li>
+                  <img src="assets/logout.png" alt="Sign Out">
+                  <a href="teacher_logout.html">Sign Out</a>
+                </li>
+          </ul>
+      </nav>
+  </div>
+  
+
+    <main class="content">
+      <header class="topbar">
+        <h1>Timetable</h1>
+      </header>
+
+      <section class="timetable-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Subject</th>
+              <th>Class</th>
+              <th>Room</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>9:00 AM</td><td>OOP</td><td>BSCS-3A</td><td>Room 202</td></tr>
+            <tr><td>Monday</td><td>11:00 AM</td><td>DBMS</td><td>BSIT-1B</td><td>Lab 3</td></tr>
+            <tr><td>Tuesday</td><td>10:00 AM</td><td>OS</td><td>BSCS-3A</td><td>Room 105</td></tr>
+            <tr><td>Wednesday</td><td>12:00 PM</td><td>DSA</td><td>BSCS-3A</td><td>Lab 1</td></tr>
+            <tr><td>Friday</td><td>9:00 AM</td><td>CN</td><td>BSIT-1B</td><td>Room 203</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  <!-- </div> -->
+</body>
+</html>
