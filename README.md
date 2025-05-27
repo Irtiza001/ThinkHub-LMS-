@@ -45,6 +45,3 @@ This Git repo tracks all updates, enhancements, and bug fixes as the LMS evolves
 4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a Pull Request
 
----
-
-Agar aapko is mein koi aur section ya language mein tabdeel karwani ho to batayein.
